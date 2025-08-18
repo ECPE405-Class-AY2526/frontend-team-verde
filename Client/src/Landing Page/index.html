@@ -1,146 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Demo Practice</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #333;
-        }
-
-        .header-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .small-button {
-            padding: 8px 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #f9f9f9;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .small-button:hover {
-            background-color: #e9e9e9;
-        }
-
-        .main-content {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .left-panel, .right-panel {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .box {
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f1f7fe;
-            border: 1px solid #cce1ff;
-        }
-
-        .red-text {
-            color: #d9534f;
-            background-color: #fef1f1;
-            border-color: #fddddd;
-        }
-
-        .small-box {
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-        }
-
-        /* Media queries for responsiveness */
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .header-buttons {
-                margin-top: 10px;
-                width: 100%;
-                justify-content: stretch;
-            }
-            .small-button {
-                flex: 1;
-            }
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Verde Intel</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+       .page {
+           display: none;
+       }
+       .page.active {
+           display: block;
+       }
+   </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Header Text</h1>
-            <div class="header-buttons">
-                <button class="small-button">Button 1</button>
-                <button class="small-button">Button 2</button>
-            </div>
-        </div>
-        <div class="main-content">
-            <div class="left-panel">
-                <div class="box red-text">
-                    <p>Some text</p>
-                </div>
-                <div class="box">
-                    <p>Content box 1</p>
-                </div>
-                <div class="box">
-                    <p>Content box 2</p>
-                </div>
-            </div>
-            <div class="right-panel">
-                <div class="small-box">
-                    <p>Data field 1</p>
-                </div>
-                <div class="small-box">
-                    <p>Data field 2</p>
-                </div>
-                <div class="small-box">
-                    <p>Data field 3</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="bg-gray-50">
+   <!-- Home Page -->
+   <div id="home" class="page active">
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100">
+           <div class="flex items-center justify-center min-h-screen">
+               <div class="text-center">
+                   <h1 class="text-6xl font-bold text-emerald-800 mb-4 tracking-wide">
+                       Welcome to Verde Intel!
+                   </h1>
+                   <div class="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-8"></div>
+                   <button onclick="showPage('options')" class="px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg">
+                       Get Started
+                   </button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Options Page -->
+   <div id="options" class="page">
+       <nav class="bg-emerald-600 text-white p-4 shadow-lg">
+           <div class="max-w-6xl mx-auto flex justify-between items-center">
+               <button onclick="showPage('home')" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+                   Verde Intel
+               </button>
+           </div>
+       </nav>
+
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center py-12">
+           <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 m-4">
+               <div class="text-center mb-8">
+                   <h2 class="text-3xl font-bold text-gray-800 mb-4">Get Started</h2>
+                   <p class="text-gray-600">Choose an option to continue</p>
+               </div>
+
+               <div class="space-y-4">
+                   <button onclick="showPage('login')" class="w-full bg-emerald-600 text-white py-4 rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg">
+                       Login
+                   </button>
+
+                   <button onclick="showPage('signup')" class="w-full bg-white text-emerald-600 py-4 rounded-lg border-2 border-emerald-600 hover:bg-emerald-50 transition-colors font-semibold text-lg">
+                       Sign Up
+                   </button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Login Page -->
+   <div id="login" class="page">
+       <nav class="bg-emerald-600 text-white p-4 shadow-lg">
+           <div class="max-w-6xl mx-auto flex justify-between items-center">
+               <button onclick="showPage('home')" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+                   Verde Intel
+               </button>
+               <button onclick="showPage('options')" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors">
+                   Back
+               </button>
+           </div>
+       </nav>
+
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center py-12">
+           <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 m-4">
+               <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Welcome Back!</h2>
+               <form onsubmit="handleLogin(event)">
+                   <div class="mb-4">
+                       <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                       <input 
+                           type="email" 
+                           id="loginEmail" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your email"
+                       />
+                   </div>
+                   <div class="mb-6">
+                       <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                       <input 
+                           type="password" 
+                           id="loginPassword" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your password"
+                       />
+                   </div>
+                   <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
+                       Login
+                   </button>
+               </form>
+               <p class="text-center text-gray-600 mt-6">
+                   Don't have an account? 
+                   <button onclick="showPage('signup')" class="text-emerald-600 hover:text-emerald-700 font-medium">Sign up here</button>
+               </p>
+           </div>
+       </div>
+   </div>
+
+   <!-- Sign Up Page -->
+   <div id="signup" class="page">
+       <nav class="bg-emerald-600 text-white p-4 shadow-lg">
+           <div class="max-w-6xl mx-auto flex justify-between items-center">
+               <button onclick="showPage('home')" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+                   Verde Intel
+               </button>
+               <button onclick="showPage('options')" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors">
+                   Back
+               </button>
+           </div>
+       </nav>
+
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center py-12">
+           <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 m-4">
+               <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Create Account</h2>
+               <form onsubmit="handleSignup(event)">
+                   <div class="mb-4">
+                       <label for="signupName" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                       <input 
+                           type="text" 
+                           id="signupName" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your full name"
+                       />
+                   </div>
+                   <div class="mb-4">
+                       <label for="signupEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                       <input 
+                           type="email" 
+                           id="signupEmail" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your email"
+                       />
+                   </div>
+                   <div class="mb-4">
+                       <label for="signupPassword" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                       <input 
+                           type="password" 
+                           id="signupPassword" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Create a password"
+                       />
+                   </div>
+                   <div class="mb-6">
+                       <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                       <input 
+                           type="password" 
+                           id="confirmPassword" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Confirm your password"
+                       />
+                   </div>
+                   <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
+                       Sign Up
+                   </button>
+               </form>
+               <p class="text-center text-gray-600 mt-6">
+                   Already have an account? 
+                   <button onclick="showPage('login')" class="text-emerald-600 hover:text-emerald-700 font-medium">Login here</button>
+               </p>
+           </div>
+       </div>
+   </div>
+
+   <script>
+       function showPage(pageId) {
+           // Hide all pages
+           const pages = document.querySelectorAll('.page');
+           pages.forEach(page => {
+               page.classList.remove('active');
+           });
+           
+           // Show selected page
+           document.getElementById(pageId).classList.add('active');
+       }
+
+       function handleLogin(event) {
+           event.preventDefault();
+           const email = document.getElementById('loginEmail').value;
+           const password = document.getElementById('loginPassword').value;
+           
+           if (email && password) {
+               alert(`Login attempted with email: ${email}`);
+           }
+       }
+
+       function handleSignup(event) {
+           event.preventDefault();
+           const name = document.getElementById('signupName').value;
+           const email = document.getElementById('signupEmail').value;
+           const password = document.getElementById('signupPassword').value;
+           const confirmPassword = document.getElementById('confirmPassword').value;
+           
+           if (password !== confirmPassword) {
+               alert('Passwords do not match!');
+               return;
+           }
+           
+           if (name && email && password) {
+               alert(`Sign up attempted with name: ${name}, email: ${email}`);
+           }
+       }
+   </script>
 </body>
 </html>
