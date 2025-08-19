@@ -3,144 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Demo Practice</title>
+    <title>Verde Intel</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
         }
 
         .container {
             width: 100%;
             max-width: 1200px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            margin-bottom: 20px;
+            padding: 20px 0;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px; /* Adjust logo size */
+            margin-right: 15px;
         }
 
         .header h1 {
             margin: 0;
-            color: #333;
+            color: #006400;
+            font-size: 2em;
         }
 
         .header-buttons {
             display: flex;
-            gap: 10px;
-        }
-
-        .small-button {
-            padding: 8px 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #f9f9f9;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .small-button:hover {
-            background-color: #e9e9e9;
-        }
-
-        .main-content {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .left-panel, .right-panel {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
             gap: 15px;
         }
 
-        .box {
-            padding: 20px;
+        .button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .button.primary {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+        }
+
+        .button.primary:hover {
+            background-color: #3cb371;
+            transform: translateY(-2px);
+        }
+
+        .button.secondary {
+            background-color: #f1f1f1;
+            color: #2e8b57;
+            border: 1px solid #2e8b57;
+        }
+
+        .button.secondary:hover {
+            background-color: #e2e2e2;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #e8f5e9;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero-section h2 {
+            font-size: 3em;
+            color: #004d00;
+            margin: 0 0 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .content-box {
+            background-color: #fff;
+            padding: 30px;
             border-radius: 8px;
-            background-color: #f1f7fe;
-            border: 1px solid #cce1ff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
         }
 
-        .red-text {
-            color: #d9534f;
-            background-color: #fef1f1;
-            border-color: #fddddd;
+        .content-box:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .small-box {
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
+        /* Contact Form */
+        .contact-form {
+            background-color: #f0f4f7;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
         }
 
-        /* Media queries for responsiveness */
+        .contact-form h3 {
+            text-align: center;
+            color: #006400;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #3cb371;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
             .header {
                 flex-direction: column;
-                align-items: flex-start;
+                text-align: center;
+                align-items: center; /* Center items on mobile */
+            }
+            .header-content {
+                flex-direction: column;
+                margin-bottom: 15px; /* Space between logo/title and buttons */
+            }
+            .logo {
+                margin-bottom: 10px;
             }
             .header-buttons {
-                margin-top: 10px;
+                margin-top: 15px;
+                flex-direction: column;
                 width: 100%;
-                justify-content: stretch;
             }
-            .small-button {
-                flex: 1;
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+            .hero-section h2 {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Header Text</h1>
+        <header class="header">
+            <div class="header-content">
+                <img src="verdeintel.png" alt="AgriTech Solutions Logo" class="logo">
+                <h1>Verde Intel</h1>
+            </div>
             <div class="header-buttons">
-                <button class="small-button">Button 1</button>
-                <button class="small-button">Button 2</button>
+                <a href="#solutions" class="button secondary">Our Solutions</a>
+                <a href="#contact" class="button primary">Get in Touch</a>
             </div>
-        </div>
-        <div class="main-content">
-            <div class="left-panel">
-                <div class="box red-text">
-                    <p>Some text</p>
-                </div>
-                <div class="box">
-                    <p>Content box 1</p>
-                </div>
-                <div class="box">
-                    <p>Content box 2</p>
-                </div>
+        </header>
+
+        <section class="hero-section">
+            <h2>Harnessing Technology for a Greener Future</h2>
+            <p>We provide advanced, data-driven solutions to help farmers increase yield, 
+                conserve resources, and build a more sustainable future for agriculture.</p>
+            <img src="verdeeintel.png" alt="Smart farm using AgriTech" class="hero-image">
+            <a href="#contact" class="button primary" style="margin-top: 20px; display: inline-block;">Learn More</a>
+        </section>
+
+        <section class="main-content" id="solutions">
+            <div class="content-box">
+                <h3>Precision Irrigation</h3>
+                <p>Optimize water usage with smart sensors and automated systems. 
+                    Reduce waste and ensure your crops get the exact amount of water they need, when they need it.</p>
             </div>
-            <div class="right-panel">
-                <div class="small-box">
-                    <p>Data field 1</p>
-                </div>
-                <div class="small-box">
-                    <p>Data field 2</p>
-                </div>
-                <div class="small-box">
-                    <p>Data field 3</p>
-                </div>
+            <div class="content-box">
+                <h3>Crop Health Monitoring</h3>
+                <p>Use drones and AI to detect plant diseases and nutrient deficiencies early. 
+                    Get real-time alerts and actionable insights to protect your harvest.</p>
             </div>
-        </div>
+            <div class="content-box">
+                <h3>Automated Harvesting</h3>
+                <p>Our robotic systems can perform tasks like harvesting and planting with unparalleled speed and accuracy, increasing efficiency and reducing labor costs.</p>
+            </div>
+        </section>
+
+        <section class="contact-form" id="contact">
+            <h3>Contact Us to Grow Your Farm</h3>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help you?</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
     </div>
 </body>
 </html>
