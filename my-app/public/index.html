@@ -1,43 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Verde Intel</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+       .page {
+           display: none;
+       }
+       .page.active {
+           display: block;
+       }
+   </style>
+</head>
+<body class="bg-gray-50">
+   <!-- Home Page -->
+   <div id="home" class="page active">
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100">
+           <div class="flex items-center justify-center min-h-screen">
+               <div class="text-center">
+                   <h1 class="text-6xl font-bold text-emerald-800 mb-4 tracking-wide">
+                       Welcome to Verde Intel!
+                   </h1>
+                   <div class="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-6"></div>
+                   <h2 class="text-2xl font-semibold text-emerald-700 mb-6">
+                       Harnessing Technology for a Greener Future
+                   </h2>
+                   <p class="text-lg text-emerald-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                       We provide advanced, data-driven solutions to help farmers increase yield, conserve resources, and build a more sustainable future for agriculture.
+                   </p>
+                   <button onclick="showPage('options')" class="px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg">
+                       Get Started
+                   </button>
+               </div>
+           </div>
+       </div>
+   </div>
+   <img>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+   <!-- Options Page -->
+   <div id="options" class="page">
+       <nav class="bg-emerald-600 text-white p-4 shadow-lg">
+           <div class="max-w-6xl mx-auto flex justify-between items-center">
+               <button onclick="showPage('home')" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+                   Verde Intel
+               </button>
+           </div>
+       </nav>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center py-12">
+           <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 m-4">
+               <div class="text-center mb-8">
+                   <h2 class="text-3xl font-bold text-gray-800 mb-4">Get Started</h2>
+                   <p class="text-gray-600">Choose an option to continue</p>
+               </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+               <div class="space-y-4">
+                   <button onclick="showPage('login')" class="w-full bg-emerald-600 text-white py-4 rounded-lg hover:bg-emerald-700 transition-colors font-semibold text-lg">
+                       Login
+                   </button>
+
+                   <button onclick="showPage('signup')" class="w-full bg-white text-emerald-600 py-4 rounded-lg border-2 border-emerald-600 hover:bg-emerald-50 transition-colors font-semibold text-lg">
+                       Sign Up
+                   </button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Login Page -->
+   <div id="login" class="page">
+       <nav class="bg-emerald-600 text-white p-4 shadow-lg">
+           <div class="max-w-6xl mx-auto flex justify-between items-center">
+               <button onclick="showPage('home')" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+                   Verde Intel
+               </button>
+               <button onclick="showPage('options')" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors">
+                   Back
+               </button>
+           </div>
+       </nav>
+
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center py-12">
+           <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 m-4">
+               <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Welcome Back!</h2>
+               <form onsubmit="handleLogin(event)">
+                   <div class="mb-4">
+                       <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                       <input 
+                           type="email" 
+                           id="loginEmail" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your email"
+                       />
+                   </div>
+                   <div class="mb-6">
+                       <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                       <input 
+                           type="password" 
+                           id="loginPassword" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your password"
+                       />
+                   </div>
+                   <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
+                       Login
+                   </button>
+               </form>
+               <p class="text-center text-gray-600 mt-6">
+                   Don't have an account? 
+                   <button onclick="showPage('signup')" class="text-emerald-600 hover:text-emerald-700 font-medium">Sign up here</button>
+               </p>
+           </div>
+       </div>
+   </div>
+
+   <!-- Sign Up Page -->
+   <div id="signup" class="page">
+       <nav class="bg-emerald-600 text-white p-4 shadow-lg">
+           <div class="max-w-6xl mx-auto flex justify-between items-center">
+               <button onclick="showPage('home')" class="text-2xl font-bold hover:text-emerald-200 transition-colors">
+                   Verde Intel
+               </button>
+               <button onclick="showPage('options')" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors">
+                   Back
+               </button>
+           </div>
+       </nav>
+
+       <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center py-12">
+           <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 m-4">
+               <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Create Account</h2>
+               <form onsubmit="handleSignup(event)">
+                   <div class="mb-4">
+                       <label for="signupName" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                       <input 
+                           type="text" 
+                           id="signupName" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your full name"
+                       />
+                   </div>
+                   <div class="mb-4">
+                       <label for="signupEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                       <input 
+                           type="email" 
+                           id="signupEmail" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Enter your email"
+                       />
+                   </div>
+                   <div class="mb-4">
+                       <label for="signupPassword" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                       <input 
+                           type="password" 
+                           id="signupPassword" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Create a password"
+                       />
+                   </div>
+                   <div class="mb-6">
+                       <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                       <input 
+                           type="password" 
+                           id="confirmPassword" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                           placeholder="Confirm your password"
+                       />
+                   </div>
+                   <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition-colors font-semibold">
+                       Sign Up
+                   </button>
+               </form>
+               <p class="text-center text-gray-600 mt-6">
+                   Already have an account? 
+                   <button onclick="showPage('login')" class="text-emerald-600 hover:text-emerald-700 font-medium">Login here</button>
+               </p>
+           </div>
+       </div>
+   </div>
+
+   <script>
+       function showPage(pageId) {
+           // Hide all pages
+           const pages = document.querySelectorAll('.page');
+           pages.forEach(page => {
+               page.classList.remove('active');
+           });
+           
+           // Show selected page
+           document.getElementById(pageId).classList.add('active');
+       }
+
+       function handleLogin(event) {
+           event.preventDefault();
+           const email = document.getElementById('loginEmail').value;
+           const password = document.getElementById('loginPassword').value;
+           
+           if (email && password) {
+               alert(`Login attempted with email: ${email}`);
+           }
+       }
+
+       function handleSignup(event) {
+           event.preventDefault();
+           const name = document.getElementById('signupName').value;
+           const email = document.getElementById('signupEmail').value;
+           const password = document.getElementById('signupPassword').value;
+           const confirmPassword = document.getElementById('confirmPassword').value;
+           
+           if (password !== confirmPassword) {
+               alert('Passwords do not match!');
+               return;
+           }
+           
+           if (name && email && password) {
+               alert(`Sign up attempted with name: ${name}, email: ${email}`);
+           }
+       }
+   </script>
+
+</body>
 </html>
