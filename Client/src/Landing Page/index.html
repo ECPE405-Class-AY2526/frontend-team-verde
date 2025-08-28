@@ -117,6 +117,54 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Video Section Styling */
+        .video-section {
+            margin: 30px 0;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            border-radius: 10px;
+        }
+
+        /* Background video styling (if using background video) */
+        .background-video-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .background-video-container video {
+            width: 100%;
+            height: 99%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+
         /* Main Content Grid */
         .main-content {
             display: grid;
@@ -339,10 +387,37 @@
             <section class="hero-section">
                 <h2>Harnessing Technology for a Greener Future</h2>
                 <p>We provide advanced, data-driven solutions to help farmers increase yield, 
-                    conserve resources, and build a more sustainable future for agriculture.
-                        <p><i>Join us and become a part of the future of farming!</i><p><p> 
+                    conserve resources, and build a more sustainable future for agriculture.<p> 
+                    <h3 style="color: #004d00; margin-bottom: 20px;">Join us and become a part of the future of farming!</h3>
+                    <button onclick="showPage('options')" class="button primary" style="margin-top: 20px;">Learn More</button>
+
+                <!-- Video Introduction Section -->
+                <div class="video-section">
+                    
+                    
+                    <!-- Option 1: YouTube Video Embed -->
+                     <!-- 
+                    <div class="video-container">
+                        <iframe width="100%" height="400" 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Verde Intel Introduction" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                     -->
+                    <!-- Option 2: Local Video File (uncomment to use) -->
+                    
+                    <video width="100%" height="400" controls poster="video-thumbnail.jpg">
+                        <source src="verde-intel-intro.mp4" type="video/mp4">
+                        <source src="verde-intel-intro.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                   
+                </div>
                 
-                <button onclick="showPage('options')" class="button primary" style="margin-top: 20px;">Learn More</button>
+                
             </section>
 
             <section class="main-content" id="solutions">
