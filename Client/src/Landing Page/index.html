@@ -697,5 +697,184 @@
             }
         });
     </script>
+
+<!-- Dashboard Page -->
+<div id="dashboard" class="page">
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <a href="#" onclick="showPage('home')">
+                    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+                </a>
+            </div>
+            <div class="header-buttons">
+                <!-- User Profile -->
+                <div class="user-profile" onclick="toggleUserMenu()">
+                    <img src="user-icon.png" alt="User Icon" class="user-icon">
+                </div>
+                <div id="userMenu" class="user-menu">
+                    <p id="userName">John Doe</p>
+                    <p id="userEmail">john@example.com</p>
+                    <button onclick="logout()" class="button secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <h2>Welcome to Your Dashboard</h2>
+            <p>Here you can track your farm’s performance, manage devices, and access personalized recommendations.</p>
+        </section>
+
+        <section class="main-content">
+            <div class="content-box">
+                <h3>Farm Overview</h3>
+                <p>Monitor irrigation systems, soil health, and crop growth in real-time.</p>
+            </div>
+            <div class="content-box">
+                <h3>Notifications</h3>
+                <p>Stay updated with alerts about water usage, weather changes, and system updates.</p>
+            </div>
+            <div class="content-box">
+                <h3>Account Settings</h3>
+                <p>Update your profile, change your password, and manage subscription plans.</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+/* User Profile Icon */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Dropdown Menu */
+.user-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 100;
+}
+.user-menu p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #333;
+}
+</style>
+
+<script>
+// Toggle user menu
+function toggleUserMenu() {
+    const menu = document.getElementById('userMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Logout
+function logout() {
+    alert("You have been logged out!");
+    showPage('home');
+    document.getElementById('userMenu').style.display = 'none';
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const profile = document.querySelector('.user-profile');
+    const menu = document.getElementById('userMenu');
+    if (!profile.contains(event.target) && !menu.contains(event.target)) {
+        menu.style.display = 'none';
+    }
+});
+</script>
+<script>
+// Save user on signup
+function handleSignup(event) {
+    event.preventDefault();
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+
+    const user = { name, email, password };
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('loggedIn', 'true');
+
+    alert(`Account created for ${name}`);
+    showDashboard(user);
+}
+
+// Handle login
+function handleLogin(event) {
+    event.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser && storedUser.email === email && storedUser.password === password) {
+        localStorage.setItem('loggedIn', 'true');
+        showDashboard(storedUser);
+    } else {
+        alert('Invalid email or password!');
+    }
+}
+
+// Show dashboard with user info
+function showDashboard(user) {
+    document.getElementById('userName').textContent = user.name;
+    document.getElementById('userEmail').textContent = user.email;
+    showPage('dashboard');
+}
+
+// Logout
+function logout() {
+    localStorage.setItem('loggedIn', 'false');
+    alert("You have been logged out!");
+    showPage('home');
+    document.getElementById('userMenu').style.display = 'none';
+}
+
+// Auto-login if already logged in
+document.addEventListener('DOMContentLoaded', function() {
+    const loggedIn = localStorage.getItem('loggedIn');
+    if (loggedIn === 'true') {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) showDashboard(user);
+    }
+});
+
+// Toggle user menu
+function toggleUserMenu() {
+    const menu = document.getElementById('userMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const profile = document.querySelector('.user-profile');
+    const menu = document.getElementById('userMenu');
+    if (!profile.contains(event.target) && !menu.contains(event.target)) {
+        menu.style.display = 'none';
+    }
+});
+</script>
+
 </body>
 </html>
