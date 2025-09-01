@@ -4,7 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verde Intel</title>
+
     <style>
+
+    /* Typewriter Effects*/
+
+    .typewriter-text {
+    font-family: cursive ;
+    font-size: 4em;
+    color: #22a522;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #2a642a;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+    text-align: center;
+    margin: 0 auto 20px;
+    }
+
+    @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    }
+
+    @keyframes blink {
+    50% { border-color: transparent; }
+    }
+
+
+    /* Gradient Effects*/
+    .gradient-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    background: linear-gradient(270deg, #589719, #86e6e1, #48a86d);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s ease infinite;
+    text-align: center;
+    }
+
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -185,6 +231,7 @@
 
         .submit-button:hover {
             background-color: #3cb371;
+            box-shadow: 0 0 12px #3cb37188;
         }
 
         /* Options Page Styling */
@@ -279,14 +326,14 @@
             font-weight: bold;
             cursor: pointer;
             text-decoration: underline;
-        }
+            }
 
-        .auth-links button:hover {
-            color: #3cb371;
-        }
+            .auth-links button:hover {
+                color: #3cb371;
+            }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 text-align: center;
@@ -320,57 +367,67 @@
                 max-width: 300px;
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Home Page -->
-    <div id="home" class="page active">
-        <div class="container">
+        </style>
+        </head>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const text = "Harnessing Technology for a Greener Future";
+            const el = document.getElementById("typewriter");
+            el.textContent = text;
+        });
+        </script>
+
+        <body>
+            <!-- Home Page -->
+            <div id="home" class="page active">
+            <div class="container">
             <header class="header">
                 <div class="header-content">
-                    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+                <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
                 </div>
                 <div class="header-buttons">
-                    <a href="#solutions" class="button secondary">Our Solutions</a>
-                    <button onclick="showPage('contact')" class="button primary">Get in Touch</button>
+                <a href="#solutions" class="button secondary">Our Solutions</a>
+                <button onclick="showPage('contact')" class="button primary">Get in Touch</button>
                 </div>
             </header>
 
             <section class="hero-section">
-                <h2>Harnessing Technology for a Greener Future</h2>
-                <p>We provide advanced, data-driven solutions to help farmers increase yield, 
+                <h2 class="typewriter-text">Harnessing Technology for a Greener Future</h2>
+                <p class="gradient-text" >We provide advanced, data-driven solutions to help farmers increase yield, 
                     conserve resources, and build a more sustainable future for agriculture.
-                        <p><i>Join us and become a part of the future of farming!</i><p><p> 
+                <p><i>Join us and become a part of the future of farming!</i><p><p> 
                 <button onclick="showPage('options')" class="button primary" style="margin-top: 20px;">Learn More</button>
+
             </section>
 
             <section class="main-content" id="solutions">
                 <div class="content-box">
-                    <h3>Precision Irrigation</h3>
-                    <p>Optimize water usage with smart sensors and automated systems. 
+                <h3>Precision Irrigation</h3>
+                <p>Optimize water usage with smart sensors and automated systems. 
                         Reduce waste and ensure your crops get the exact amount of water they need, when they need it.</p>
                 </div>
                 <div class="content-box">
-                    <h3>Crop Health Monitoring</h3>
-                    <p>Use drones and AI to detect plant diseases and nutrient deficiencies early. 
+                <h3>Crop Health Monitoring</h3>
+                <p>Use drones and AI to detect plant diseases and nutrient deficiencies early. 
                         Get real-time alerts and actionable insights to protect your harvest.</p>
                 </div>
                 <div class="content-box">
-                    <h3>Automated Harvesting</h3>
-                    <p>Our robotic systems can perform tasks like harvesting and planting with unparalleled speed and accuracy, increasing efficiency and reducing labor costs.</p>
+                <h3>Automated Harvesting</h3>
+                <p>Our robotic systems can perform tasks like harvesting and planting with unparalleled speed and accuracy, increasing efficiency and reducing labor costs.</p>
                 </div>
             </section>
+            </div>
         </div>
-    </div>
 
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-        <div class="container">
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="container">
             <header class="header">
                 <div class="header-content">
                     <a href="#" onclick="showPage('home')">
-    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-</a>
+        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+        </a>
 
                 </div>
                 <div class="header-buttons">
@@ -406,8 +463,8 @@
             <header class="header">
                 <div class="header-content">
                     <a href="#" onclick="showPage('home')">
-    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-</a>
+        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+        </a>
                 </div>
                 <div class="header-buttons">
                     <button onclick="showPage('home')" class="button secondary">Back to Home</button>
@@ -440,16 +497,16 @@
                 </div>
             </section>
         </div>
-    </div>
+        </div>
 
-    <!-- Login Page -->
-    <div id="login" class="page">
-        <div class="container">
-            <header class="header">
-                <div class="header-content">
-                    <a href="#" onclick="showPage('home')">
-    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-</a>
+        <!-- Login Page -->
+        <div id="login" class="page">
+            <div class="container">
+                <header class="header">
+                    <div class="header-content">
+                        <a href="#" onclick="showPage('home')">
+        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+     </a>
 
                 </div>
                 <div class="header-buttons">
@@ -488,18 +545,18 @@
                     <h3>Continue Your Journey</h3>
                     <p>Pick up where you left off with your precision agriculture tools and continue optimizing your farm's performance.</p>
                 </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
 
-    <!-- Sign Up Page -->
-    <div id="signup" class="page">
-        <div class="container">
-            <header class="header">
-                <div class="header-content">
-                    <a href="#" onclick="showPage('home')">
-    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-</a>
+        <!-- Sign Up Page -->
+        <div id="signup" class="page">
+            <div class="container">
+                <header class="header">
+                    <div class="header-content">
+                        <a href="#" onclick="showPage('home')">
+        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+     </a>
 
                 </div>
                 <div class="header-buttons">
@@ -547,62 +604,7 @@
                     <p>Our team of agricultural experts will help you set up your systems and provide ongoing support to maximize your farm's potential.</p>
                 </div>
             </section>
-        </div>
-    </div>
-
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-        }
-
-        function handleLogin(event) {
-            event.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            if (email && password) {
-                alert(`Login attempted with email: ${email}`);
-                // Here you would typically send the data to your server
-            }
-        }
-
-        function handleSignup(event) {
-            event.preventDefault();
-            const name = document.getElementById('signupName').value;
-            const email = document.getElementById('signupEmail').value;
-            const password = document.getElementById('signupPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            if (name && email && password) {
-                alert(`Sign up attempted with name: ${name}, email: ${email}`);
-                // Here you would typically send the data to your server
-            }
-        }
-
-        // Smooth scrolling for anchor links on home page
-        document.addEventListener('DOMContentLoaded', function() {
-            const solutionsLink = document.querySelector('a[href="#solutions"]');
-            if (solutionsLink) {
-                solutionsLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.getElementById('solutions').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        });
-    </script>
-</body>
+                </div>
+            </div>
+        </body>
 </html>
