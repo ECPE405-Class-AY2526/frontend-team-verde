@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verde Intel</title>
-
+    
     <style>
-
+    
     /* Typewriter Effects*/
 
     .typewriter-text {
@@ -49,7 +49,6 @@
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
-
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -134,10 +133,10 @@
 
         /* Hero Section */
         .hero-section {
-            background-color: #ffffffab;
+            background-color: #e8f5e9;
             text-align: center;
             padding: 60px 20px;
-            border-radius: 15px;
+            border-radius: 10px;
             margin-bottom: 40px;
         }
 
@@ -149,7 +148,7 @@
 
         .hero-section p {
             font-size: 1.2em;
-            color: #343434;
+            color: #555;
             max-width: 700px;
             margin: 0 auto 20px;
         }
@@ -171,9 +170,9 @@
         }
 
         .content-box {
-            background-color: #ffffffca;
+            background-color: #fff;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: box-shadow 0.3s ease;
         }
@@ -186,7 +185,7 @@
         .contact-form {
             background-color: #f0f4f7;
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 10px;
             margin-top: 40px;
         }
 
@@ -208,8 +207,8 @@
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccccccda;
-            border-radius: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             box-sizing: border-box;
         }
 
@@ -231,15 +230,14 @@
 
         .submit-button:hover {
             background-color: #3cb371;
-            box-shadow: 0 0 12px #3cb37188;
         }
 
         /* Options Page Styling */
         .options-hero {
-            background-color: rgba(237, 255, 233, 0.836);
+            background-color: rgba(237, 255, 233, 0.60);
             text-align: center;
             padding: 20px;
-            border-radius:  15px;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
 
@@ -275,7 +273,7 @@
 
         /* Login/Signup Form Styling */
         .auth-section {
-            background-color: rgba(237, 255, 233, 0.777);
+            background-color: rgba(237, 255, 233, 0.60);
             padding: 40px;
             border-radius: 10px;
             margin-bottom: 40px;
@@ -304,12 +302,12 @@
             padding: 15px;
             font-size: 1em;
             border: 2px solid #ccc;
-            border-radius: 10px;
+            border-radius: 8px;
             transition: border-color 0.3s ease;
         }
 
         .auth-form input:focus {
-            border-color: #2e8b56;
+            border-color: #2e8b57;
             outline: none;
         }
 
@@ -326,14 +324,14 @@
             font-weight: bold;
             cursor: pointer;
             text-decoration: underline;
-            }
+        }
 
-            .auth-links button:hover {
-                color: #3cb371;
-            }
+        .auth-links button:hover {
+            color: #3cb371;
+        }
 
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 text-align: center;
@@ -367,67 +365,57 @@
                 max-width: 300px;
             }
         }
-        </style>
-        </head>
-
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const text = "Harnessing Technology for a Greener Future";
-            const el = document.getElementById("typewriter");
-            el.textContent = text;
-        });
-        </script>
-
-        <body>
-            <!-- Home Page -->
-            <div id="home" class="page active">
-            <div class="container">
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="container">
             <header class="header">
                 <div class="header-content">
-                <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+                    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
                 </div>
                 <div class="header-buttons">
-                <a href="#solutions" class="button secondary">Our Solutions</a>
-                <button onclick="showPage('contact')" class="button primary">Get in Touch</button>
+                    <a href="#solutions" class="button secondary">Our Solutions</a>
+                    <button onclick="showPage('contact')" class="button primary">Get in Touch</button>
                 </div>
             </header>
 
             <section class="hero-section">
                 <h2 class="typewriter-text">Harnessing Technology for a Greener Future</h2>
-                <p class="gradient-text" >We provide advanced, data-driven solutions to help farmers increase yield, 
-                    conserve resources, and build a more sustainable future for agriculture.
-                <p><i>Join us and become a part of the future of farming!</i><p><p> 
-                <button onclick="showPage('options')" class="button primary" style="margin-top: 20px;">Learn More</button>
-
+                <p class="gradient-text">We provide advanced, data-driven solutions to help farmers increase yield, 
+                    conserve resources, and build a more sustainable future for agriculture.<p> 
+                    <h3 style="color: #004d00; margin-bottom: 20px;">Join us and become a part of the future of farming!</h3>
+                    <button onclick="showPage('options')" class="button primary" style="margin-top: 20px;">Learn More</button>
             </section>
 
             <section class="main-content" id="solutions">
                 <div class="content-box">
-                <h3>Precision Irrigation</h3>
-                <p>Optimize water usage with smart sensors and automated systems. 
+                    <h3>Precision Irrigation</h3>
+                    <p>Optimize water usage with smart sensors and automated systems. 
                         Reduce waste and ensure your crops get the exact amount of water they need, when they need it.</p>
                 </div>
                 <div class="content-box">
-                <h3>Crop Health Monitoring</h3>
-                <p>Use drones and AI to detect plant diseases and nutrient deficiencies early. 
+                    <h3>Crop Health Monitoring</h3>
+                    <p>Use drones and AI to detect plant diseases and nutrient deficiencies early. 
                         Get real-time alerts and actionable insights to protect your harvest.</p>
                 </div>
                 <div class="content-box">
-                <h3>Automated Harvesting</h3>
-                <p>Our robotic systems can perform tasks like harvesting and planting with unparalleled speed and accuracy, increasing efficiency and reducing labor costs.</p>
+                    <h3>Automated Harvesting</h3>
+                    <p>Our robotic systems can perform tasks like harvesting and planting with unparalleled speed and accuracy, increasing efficiency and reducing labor costs.</p>
                 </div>
             </section>
-            </div>
         </div>
+    </div>
 
-        <!-- Contact Page -->
-        <div id="contact" class="page">
-            <div class="container">
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="container">
             <header class="header">
                 <div class="header-content">
                     <a href="#" onclick="showPage('home')">
-        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-        </a>
+    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+</a>
 
                 </div>
                 <div class="header-buttons">
@@ -463,8 +451,8 @@
             <header class="header">
                 <div class="header-content">
                     <a href="#" onclick="showPage('home')">
-        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-        </a>
+    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+</a>
                 </div>
                 <div class="header-buttons">
                     <button onclick="showPage('home')" class="button secondary">Back to Home</button>
@@ -497,16 +485,16 @@
                 </div>
             </section>
         </div>
-        </div>
+    </div>
 
-        <!-- Login Page -->
-        <div id="login" class="page">
-            <div class="container">
-                <header class="header">
-                    <div class="header-content">
-                        <a href="#" onclick="showPage('home')">
-        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-     </a>
+    <!-- Login Page -->
+    <div id="login" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="header-content">
+                    <a href="#" onclick="showPage('home')">
+    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+</a>
 
                 </div>
                 <div class="header-buttons">
@@ -545,18 +533,18 @@
                     <h3>Continue Your Journey</h3>
                     <p>Pick up where you left off with your precision agriculture tools and continue optimizing your farm's performance.</p>
                 </div>
-                </section>
-            </div>
+            </section>
         </div>
+    </div>
 
-        <!-- Sign Up Page -->
-        <div id="signup" class="page">
-            <div class="container">
-                <header class="header">
-                    <div class="header-content">
-                        <a href="#" onclick="showPage('home')">
-        <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
-     </a>
+    <!-- Sign Up Page -->
+    <div id="signup" class="page">
+        <div class="container">
+            <header class="header">
+                <div class="header-content">
+                    <a href="#" onclick="showPage('home')">
+    <img src="vERDE.png" alt="AgriTech Solutions Logo" class="logo">
+</a>
 
                 </div>
                 <div class="header-buttons">
@@ -604,7 +592,7 @@
                     <p>Our team of agricultural experts will help you set up your systems and provide ongoing support to maximize your farm's potential.</p>
                 </div>
             </section>
-                </div>
-            </div>
-        </body>
+        </div>
+    </div>
+</body>
 </html>
