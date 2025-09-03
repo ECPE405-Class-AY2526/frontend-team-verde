@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verde Intel</title>
-    
+    <title>Ve rde Intel</title>  
+    <script type="module" src="firebaseauth.js"></script>
     <style>
     
     /* Typewriter Effects*/
@@ -506,6 +507,7 @@
             <section class="auth-section">
                 <h2>Welcome Back!</h2>
                 <form class="auth-form" onsubmit="handleLogin(event)">
+                    <div id="loginMessage" class="messageDiv" style="display: none;" ></div>
                     <div class="form-group">
                         <label for="loginEmail">Email Address</label>
                         <input type="email" id="loginEmail" required placeholder="Enter your email">
@@ -514,7 +516,7 @@
                         <label for="loginPassword">Password</label>
                         <input type="password" id="loginPassword" required placeholder="Enter your password">
                     </div>
-                    <button type="submit" class="submit-button">Login</button>
+                    <button type="submit" id="submitlogin" class="submit-button">Login</button>
                 </form>
                 
                 <div class="auth-links">
@@ -556,6 +558,7 @@
             <section class="auth-section">
                 <h2>Join Verde Intel</h2>
                 <form class="auth-form" onsubmit="handleSignup(event)">
+                    <div id="signUpMessage" class="messageDiv" style="display: none;" ></div>
                     <div class="form-group">
                         <label for="signupName">Full Name</label>
                         <input type="text" id="signupName" required placeholder="Enter your full name">
@@ -572,7 +575,7 @@
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" required placeholder="Confirm your password">
                     </div>
-                    <button type="submit" class="submit-button">Create Account</button>
+                    <button type="submit" id="submitCreateAcc" class="submit-button">Create Account</button>
                 </form>
                 
                 <div class="auth-links">
@@ -594,6 +597,7 @@
             </section>
         </div>
     </div>
+    
        <script>
         function showPage(pageId) {
             // Hide all pages
