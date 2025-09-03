@@ -1,59 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verde Intel</title>  
-
+    <title>Verde Intel</title>
     <style>
-    /* Apply Segoe UI to all elements */
-    * {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        box-sizing: border-box;
-    }
-
-    /* Typewriter Effects*/
-    .typewriter-text {
-        font-size: 4em;
-        color: #22a522;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 2px solid #2a642a;
-        width: 0;
-        animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
-        text-align: center;
-        margin: 0 auto 20px;
-    }
-
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
-
-    @keyframes blink {
-        50% { border-color: transparent; }
-    }
-
-    /* Gradient Effects*/
-    .gradient-text {
-        font-size: 2.5em;
-        font-weight: bold;
-        background: linear-gradient(270deg, #589719, #86e6e1, #48a86d);
-        background-size: 600% 600%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientMove 5s ease infinite;
-        text-align: center;
-    }
-
-    @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
 
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-image: url(verdeee.jpg);
@@ -135,7 +89,7 @@
 
         /* Hero Section */
         .hero-section {
-            background-color: #e8f5e9cf;
+            background-color: #e8f5e9;
             text-align: center;
             padding: 60px 20px;
             border-radius: 15px;
@@ -172,7 +126,7 @@
         }
 
         .content-box {
-            background-color: #ffffffc7;
+            background-color: #fff;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -185,7 +139,7 @@
 
         /* Contact Form */
         .contact-form {
-            background-color: #f0f4f7c2;
+            background-color: #f0f4f7;
             padding: 30px;
             border-radius: 15px;
             margin-top: 40px;
@@ -239,7 +193,7 @@
             background-color: rgba(237, 255, 233, 0.60);
             text-align: center;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
 
@@ -384,11 +338,13 @@
             </header>
 
             <section class="hero-section">
-                <h2 class="typewriter-text">Harnessing Technology for a Greener Future</h2>
-                <p class="gradient-text">We provide advanced, data-driven solutions to help farmers increase yield, 
+                <h2>Harnessing Technology for a Greener Future</h2>
+                <p>We provide advanced, data-driven solutions to help farmers increase yield, 
                     conserve resources, and build a more sustainable future for agriculture.<p> 
                     <h3 style="color: #004d00; margin-bottom: 20px;">Join us and become a part of the future of farming!</h3>
                     <button onclick="showPage('options')" class="button primary" style="margin-top: 20px;">Learn More</button>
+
+            
             </section>
 
             <section class="main-content" id="solutions">
@@ -508,7 +464,6 @@
             <section class="auth-section">
                 <h2>Welcome Back!</h2>
                 <form class="auth-form" onsubmit="handleLogin(event)">
-                    <div id="loginMessage" class="messageDiv" style="display: none;" ></div>
                     <div class="form-group">
                         <label for="loginEmail">Email Address</label>
                         <input type="email" id="loginEmail" required placeholder="Enter your email">
@@ -517,7 +472,7 @@
                         <label for="loginPassword">Password</label>
                         <input type="password" id="loginPassword" required placeholder="Enter your password">
                     </div>
-                    <button type="submit" id="submitlogin" class="submit-button">Login</button>
+                    <button type="submit" class="submit-button">Login</button>
                 </form>
                 
                 <div class="auth-links">
@@ -540,7 +495,7 @@
         </div>
     </div>
 
-    <!-- Sign Up Page -->
+ <!-- Sign Up Page -->
     <div id="signup" class="page">
         <div class="container">
             <header class="header">
@@ -557,48 +512,39 @@
             </header>
 
             <section class="auth-section">
-                <h2>Join Verde Intel</h2>
-                <form class="auth-form" onsubmit="handleSignup(event)">
-                    <div id="signUpMessage" class="messageDiv" style="display: none;" ></div>
+                <h2>Welcome Back!</h2>
+                <form class="auth-form" onsubmit="handleLogin(event)">
                     <div class="form-group">
-                        <label for="signupName">Full Name</label>
-                        <input type="text" id="signupName" required placeholder="Enter your full name">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" required placeholder="Enter your email">
                     </div>
                     <div class="form-group">
-                        <label for="signupEmail">Email Address</label>
-                        <input type="email" id="signupEmail" required placeholder="Enter your email">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required placeholder="Enter your password">
                     </div>
-                    <div class="form-group">
-                        <label for="signupPassword">Password</label>
-                        <input type="password" id="signupPassword" required placeholder="Create a password">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" required placeholder="Confirm your password">
-                    </div>
-                    <button type="submit" id="submitCreateAcc" class="submit-button">Create Account</button>
+                    <button type="submit" class="submit-button">Login</button>
                 </form>
                 
                 <div class="auth-links">
-                    <p>Already have an account? 
-                        <button onclick="showPage('login')">Login here</button>
+                    <p>Don't have an account? 
+                        <button onclick="showPage('signup')">Sign up here</button>
                     </p>
                 </div>
             </section>
 
             <section class="main-content">
                 <div class="content-box">
-                    <h3>Start Your Free Trial</h3>
-                    <p>Get 30 days free access to all our premium features including AI crop monitoring, automated irrigation controls, and detailed analytics.</p>
+                    <h3>Access Your Dashboard</h3>
+                    <p>Monitor your farm's real-time data, receive alerts, and manage your automated systems all from one centralized platform.</p>
                 </div>
                 <div class="content-box">
-                    <h3>Expert Support</h3>
-                    <p>Our team of agricultural experts will help you set up your systems and provide ongoing support to maximize your farm's potential.</p>
+                    <h3>Continue Your Journey</h3>
+                    <p>Pick up where you left off with your precision agriculture tools and continue optimizing your farm's performance.</p>
                 </div>
             </section>
         </div>
     </div>
-    
+
     <script>
         function showPage(pageId) {
             // Hide all pages
