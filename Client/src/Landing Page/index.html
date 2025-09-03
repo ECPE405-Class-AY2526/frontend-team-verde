@@ -572,7 +572,7 @@
 
            <section class="auth-section">
                <h2>Welcome Back!</h2>
-               <form class="auth-form" onsubmit="handleLogin(event)">
+               <form id="loginForm" class="auth-form">
                    <div class="form-group">
                        <label for="loginEmail">Email Address</label>
                        <input type="email" id="loginEmail" required placeholder="Enter your email">
@@ -900,26 +900,6 @@
            }
        }
 
-       // Handle login
-       function handleLogin(event) {
-           event.preventDefault();
-           
-           const email = document.getElementById('loginEmail').value.trim().toLowerCase();
-           const password = document.getElementById('loginPassword').value;
-
-           if (!email || !password) {
-               alert('Please enter both email and password!');
-               return;
-           }
-
-           try {
-               const user = userManager.loginUser(email, password);
-               alert(`Welcome back, ${user.name}!`);
-               userManager.showDashboard(user);
-           } catch (error) {
-               alert('Error: ' + error.message);
-           }
-       }
 
        // Logout function
        function logout() {
@@ -1007,7 +987,6 @@
     });
 }
 
-    // Save user to Firestore and Realtime DB
     // Save user to Firestore + Realtime DB
     async function saveUserToDB(user) {
         try {
