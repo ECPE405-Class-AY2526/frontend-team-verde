@@ -989,13 +989,12 @@
             await saveUserToDB(userData);
 
             alert("✅ Account created!");
-            userManager.showDashboard(userData); // keep your UI logic
+            userManager.showDashboard(userData); 
         } catch (error) {
             alert("Error: " + error.message);
         }
     };
 
-    // Hook into your login
     // Login
     document.getElementById("loginForm").addEventListener("submit", async (e) => {
         e.preventDefault();
