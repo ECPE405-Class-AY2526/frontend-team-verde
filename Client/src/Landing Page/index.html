@@ -5,8 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Verde Intel</title>
    <link rel="stylesheet" href="style.css">
-   <script src="script.js"></script>
-   <script type="module" src="firebase.js"></script>
+   
 
 </head>
 <body>
@@ -131,53 +130,64 @@
 
    <!-- Login Page -->
    <div id="login" class="page">
-       <div class="container">
-           <header class="header">
-               <div class="header-content">
-                   <a href="#" onclick="showPage('home')">
-   <img src="logo1.png" alt="AgriTech Solutions Logo" class="logo">
-</a>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <a href="#" onclick="showPage('home')">
+                    <img src="logo1.png" alt="AgriTech Solutions Logo" class="logo">
+                </a>
+            </div>
+            <div class="header-buttons">
+                <button onclick="showPage('options')" class="button secondary">Back</button>
+                <button onclick="showPage('home')" class="button primary">Home</button>
+            </div>
+        </header>
 
-               </div>
-               <div class="header-buttons">
-                   <button onclick="showPage('options')" class="button secondary">Back</button>
-                   <button onclick="showPage('home')" class="button primary">Home</button>
-               </div>
-           </header>
+        <section class="auth-section">
+            <h2>Welcome Back!</h2>
+            <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)" autocomplete="on">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="loginEmail" 
+                        required 
+                        placeholder="Enter your email"
+                        autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="loginPassword" 
+                        required 
+                        placeholder="Enter your password"
+                        autocomplete="current-password">
+                </div>
+                <button type="submit" class="submit-button">Login</button>
+            </form>
+            
+            <div class="auth-links">
+                <p>Don't have an account? 
+                    <button onclick="showPage('signup')">Sign up here</button>
+                </p>
+            </div>
+        </section>
 
-           <section class="auth-section">
-               <h2>Welcome Back!</h2>
-               <form id="loginForm" class="auth-form">
-                   <div class="form-group">
-                       <label for="loginEmail">Email Address</label>
-                       <input type="email" id="loginEmail" required placeholder="Enter your email">
-                   </div>
-                   <div class="form-group">
-                       <label for="loginPassword">Password</label>
-                       <input type="password" id="loginPassword" required placeholder="Enter your password">
-                   </div>
-                   <button type="submit" class="submit-button">Login</button>
-               </form>
-               
-               <div class="auth-links">
-                   <p>Don't have an account? 
-                       <button onclick="showPage('signup')">Sign up here</button>
-                   </p>
-               </div>
-           </section>
+        <section class="main-content">
+            <div class="content-box">
+                <h3>Access Your Dashboard</h3>
+                <p>Monitor your farm's real-time data, receive alerts, and manage your automated systems all from one centralized platform.</p>
+            </div>
+            <div class="content-box">
+                <h3>Continue Your Journey</h3>
+                <p>Pick up where you left off with your precision agriculture tools and continue optimizing your farm's performance.</p>
+            </div>
+        </section>
+    </div>
+</div>
 
-           <section class="main-content">
-               <div class="content-box">
-                   <h3>Access Your Dashboard</h3>
-                   <p>Monitor your farm's real-time data, receive alerts, and manage your automated systems all from one centralized platform.</p>
-               </div>
-               <div class="content-box">
-                   <h3>Continue Your Journey</h3>
-                   <p>Pick up where you left off with your precision agriculture tools and continue optimizing your farm's performance.</p>
-               </div>
-           </section>
-       </div>
-   </div>
+
 
    <!-- Sign Up Page -->
    <div id="signup" class="page">
@@ -278,4 +288,7 @@
            </section>
        </div>
    </div>
+
+   <script src="script.js"></script>
+   <script type="module" src="firebase.js"></script>
 <body>

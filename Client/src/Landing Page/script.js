@@ -193,6 +193,28 @@ async function handleSignup(event) {
     }
 }
 
+// Handle login
+function handleLogin(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    const password = document.getElementById('loginPassword').value;
+
+    if (!email || !password) {
+        alert('Please enter both email and password!');
+        return;
+    }
+
+    try {
+        const user = userManager.loginUser(email, password);
+        alert(`Welcome back, ${user.name}!`);
+        userManager.showDashboard(user);
+    } catch (error) {
+        alert('Login failed: ' + error.message);
+    }
+}
+
+
 
 // Logout function
 function logout() {
